@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Exercise02">
+
+
+    <TextView
+        android:id="@+id/txt_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="List of Checkboxes for selection " />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <CheckBox
+            android:id="@+id/cbAndroid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Android" />
+
+        <CheckBox
+            android:id="@+id/cbIOS"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="IOS" />
+
+        <CheckBox
+            android:id="@+id/cbWindows"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Windows" />
+
+        <CheckBox
+            android:id="@+id/cbRIM"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RIM" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="List of Radio Buttons for selection"/>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RadioButton
+            android:id="@+id/rbAndroid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Android" />
+
+        <RadioButton
+            android:id="@+id/rbIOS"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="IOS" />
+
+        <RadioButton
+            android:id="@+id/rbWindows"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Windows" />
+
+        <CheckBox
+            android:id="@+id/rbRIM"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RIM" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnSeeResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Click here to see Results" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="The following were selected..." />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Android: " />
+
+            <TextView
+                android:id="@+id/txtAndroid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="false" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="iOS: " />
+
+            <TextView
+                android:id="@+id/txtIOS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="false" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Windows: " />
+
+            <TextView
+                android:id="@+id/txtWindows"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="false" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RIM: " />
+
+            <TextView
+                android:id="@+id/txtRIM"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="false" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>
