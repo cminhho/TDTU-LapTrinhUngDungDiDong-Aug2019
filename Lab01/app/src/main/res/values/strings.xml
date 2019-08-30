@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">Lab1</string>
+    <string name="enter_your_content_here">Enter your content here</string>
+    <string name="click_me">Click Me</string>
+    <string name="text_view_to_display_your_content">Text view to display your content</string>
+    <string name="message_text_require">vui lòng nhập thông tin</string>
+    <string name="list_of_checkboxes_for_selection">List of Checkboxes for selection</string>
+    <string name="android">Android</string>
+    <string name="ios">IOS</string>
+    <string name="windows">Windows</string>
+    <string name="rim">RIM</string>
+    <string name="list_of_radio_buttons_for_selection">List of Radio Buttons for selection</string>
+    <string name="click_here_to_see_results">Click here to see Results</string>
+    <string name="the_following_were_selected">The following were selected...</string>
+    <string name="android_label">Android:</string>
+    <string name="ios_label">iOS:</string>
+    <string name="windows_label">Windows:</string>
+    <string name="rim_label">RIM:</string>
+    <string name="checkbox_default_value">false</string>
 </resources>

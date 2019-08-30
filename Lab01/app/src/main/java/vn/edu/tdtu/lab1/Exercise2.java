@@ -1,18 +1,18 @@
 package vn.edu.tdtu.lab1;
 
+import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
-public class Exercise02 extends AppCompatActivity {
-    CheckBox cbAndroid, cbIOS, cbWindows, cbRIM;
-    RadioButton rbAndroid, rbIOS, rbWindows, rbRIM;
-    TextView txtAndroid, txtIOS, txtWindows, txtRIM;
-    Button btnSeeResult;
+public class Exercise2 extends Activity {
+    private CheckBox cbAndroid, cbIOS, cbWindows, cbRIM;
+    private RadioButton rbAndroid, rbIOS, rbWindows, rbRIM;
+    private TextView txtAndroid, txtIOS, txtWindows, txtRIM;
+    private Button btnSeeResult;
 
     @Override
     protected void onCreate(Bundle saveInstanceState) {
@@ -33,20 +33,16 @@ public class Exercise02 extends AppCompatActivity {
         btnSeeResult = findViewById(R.id.btnSeeResult);
 
         // handle events
-        btnSeeResult.setOnClickListener(seeResultListener);
+        btnSeeResult.setOnClickListener(onBtnSeeResultClicked);
     }
 
-    private View.OnClickListener seeResultListener = new View.OnClickListener() {
+    private View.OnClickListener onBtnSeeResultClicked = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            updateTextResults();
+            txtAndroid.setText(String.valueOf(cbAndroid.isChecked()));
+            txtIOS.setText(String.valueOf(cbIOS.isChecked()));
+            txtWindows.setText(String.valueOf(cbWindows.isChecked()));
+            txtRIM.setText(String.valueOf(cbRIM.isChecked()));
         }
     };
-
-    private void updateTextResults() {
-        txtAndroid.setText(String.valueOf(cbAndroid.isChecked()));
-        txtIOS.setText(String.valueOf(cbIOS.isChecked()));
-        txtWindows.setText(String.valueOf(cbWindows.isChecked()));
-        txtRIM.setText(String.valueOf(cbRIM.isChecked()));
-    }
 }

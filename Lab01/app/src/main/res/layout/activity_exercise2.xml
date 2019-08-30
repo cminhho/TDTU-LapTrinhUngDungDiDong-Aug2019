@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Exercise02">
+    android:padding="10dp"
+    tools:context=".Exercise2">
 
 
     <TextView
         android:id="@+id/txt_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="List of Checkboxes for selection " />
+        android:text="@string/list_of_checkboxes_for_selection" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -22,31 +24,32 @@
             android:id="@+id/cbAndroid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Android" />
+            android:text="@string/android" />
 
         <CheckBox
             android:id="@+id/cbIOS"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="IOS" />
+            android:text="@string/ios" />
 
         <CheckBox
             android:id="@+id/cbWindows"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Windows" />
+            android:text="@string/windows" />
 
         <CheckBox
             android:id="@+id/cbRIM"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RIM" />
+            android:text="@string/rim" />
     </LinearLayout>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="List of Radio Buttons for selection"/>
+        android:layout_marginTop="@dimen/medium_margin"
+        android:text="@string/list_of_radio_buttons_for_selection"/>
 
     <RadioGroup
         android:layout_width="match_parent"
@@ -55,42 +58,44 @@
             android:id="@+id/rbAndroid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Android" />
+            android:text="@string/android" />
 
         <RadioButton
             android:id="@+id/rbIOS"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="IOS" />
+            android:text="@string/ios"/>
 
         <RadioButton
             android:id="@+id/rbWindows"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Windows" />
+            android:text="@string/windows" />
 
         <CheckBox
             android:id="@+id/rbRIM"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RIM" />
+            android:text="@string/rim"  />
     </RadioGroup>
 
     <Button
         android:id="@+id/btnSeeResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Click here to see Results" />
+        android:layout_marginTop="@dimen/medium_margin"
+        android:text="@string/click_here_to_see_results" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/medium_margin"
         android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="The following were selected..." />
+            android:text="@string/the_following_were_selected" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -100,7 +105,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Android: " />
+                android:text="@string/android_label" />
 
             <TextView
                 android:id="@+id/txtAndroid"
@@ -117,13 +122,13 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="iOS: " />
+                android:text="@string/ios_label" />
 
             <TextView
                 android:id="@+id/txtIOS"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="false" />
+                android:text="@string/checkbox_default_value" />
         </LinearLayout>
 
         <LinearLayout
@@ -134,13 +139,13 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Windows: " />
+                android:text="@string/windows_label" />
 
             <TextView
                 android:id="@+id/txtWindows"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="false" />
+                android:text="@string/checkbox_default_value" />
         </LinearLayout>
 
         <LinearLayout
@@ -151,13 +156,13 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="RIM: " />
+                android:text="@string/rim_label" />
 
             <TextView
                 android:id="@+id/txtRIM"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="false" />
+                android:text="@string/checkbox_default_value" />
         </LinearLayout>
     </LinearLayout>
 
