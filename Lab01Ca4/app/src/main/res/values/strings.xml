@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Lab01Ca4</string>
+    <!--exercise01-->
+    <string name="exercise01_msg_enter_your_content_here">Enter your content here</string>
+    <string name="exercise01_action_click_me">Click Me</string>
+    <string name="exercise01_msg_textview_to_display_your_content">TextView to display your content</string>
+    <string name="exercise01_err_content_required">vui lòng nhập thông tin</string>
+</resources>
