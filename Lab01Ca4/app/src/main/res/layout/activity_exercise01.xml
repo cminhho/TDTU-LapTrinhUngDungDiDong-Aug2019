@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
-    tools:context="com.tdtu.android.lab01ca4.MainActivity">
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:gravity="center"
+  android:orientation="vertical"
+  tools:context="com.tdtu.android.lab01ca4.Exercise01">
 
-    <EditText
-        android:id="@+id/activity_exercise01_edt_content"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="text"
-        android:hint="@string/exercise01_msg_enter_your_content_here"/>
+  <EditText
+    android:id="@+id/activity_exercise01_edt_content"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:inputType="text"
+    android:text="@string/exercise01_msg_enter_your_content_here"/>
 
-    <Button
-        android:id="@+id/activity_exercise01_btn_content"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/exercise01_action_click_me"/>
+  <Button
+    android:id="@+id/activity_exercise01_btn_click_me"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/exercise01_action_click_me"/>
 
-    <TextView
-        android:id="@+id/activity_exercise01_txt_content"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/exercise01_msg_textview_to_display_your_content"/>
+  <TextView
+    android:id="@+id/activity_exercise01_txt_content"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/exercise01_msg_textview_to_display_your_content"/>
 
 </LinearLayout>
