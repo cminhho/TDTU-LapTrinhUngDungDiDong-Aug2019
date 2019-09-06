@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">lab02</string>
+    <string name="action_settings">Settings</string>
+    <!--exercise 1-->
+    <string name="exercise1_msg_username">Username</string>
+    <string name="exercise1_msg_password">Password</string>
+    <string name="exercise1_msg_remember_password">Remember Password</string>
+    <string name="exercise1_msg_log_in">Log in</string>
+    <!--exercise 2-->
+    <string name="exercise2_hint_number">Number…</string>
+    <string name="exercise2_action_0">0</string>
+    <string name="exercise2_action_1">1</string>
+    <string name="exercise2_action_2">2</string>
+    <string name="exercise2_action_3">3</string>
+    <string name="exercise2_action_4">4</string>
+    <string name="exercise2_action_5">5</string>
+    <string name="exercise2_action_6">6</string>
+    <string name="exercise2_action_7">7</string>
+    <string name="exercise2_action_8">8</string>
+    <string name="exercise2_action_9">9</string>
+    <string name="exercise2_action_dot">.</string>
+    <string name="exercise2_action_plus">+</string>
+    <string name="exercise2_action_substract">-</string>
+    <string name="exercise2_action_multiply">*</string>
+    <string name="exercise2_action_divide">/</string>
+    <string name="exercise2_action_sqrt">SQRT</string>
+    <string name="exercise2_action_square_root">√</string>
+    <string name="exercise2_action_mod">MOD</string>
+    <string name="exercise2_action_div">DIV</string>
+    <string name="exercise2_action_equals">=</string>
+    <!--exercise 3-->
+    <string name="exercise3_msg_phone">Phone</string>
+    <string name="exercise3_msg_mail">Mail</string>
+    <string name="exercise3_msg_safari">Safari</string>
+    <string name="exercise3_msg_music">Music</string>
+</resources>
