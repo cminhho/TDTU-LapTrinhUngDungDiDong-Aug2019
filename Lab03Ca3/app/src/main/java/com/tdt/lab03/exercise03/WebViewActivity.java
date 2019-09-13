@@ -6,6 +6,9 @@ import android.webkit.WebView;
 
 import com.tdt.lab03.R;
 
+/**
+ * Created by thChung on 9/14/2019.
+ */
 public class WebViewActivity extends Activity {
 
     private WebView webView;

@@ -12,9 +12,8 @@ import android.widget.Toast;
 import com.tdt.lab03.R;
 
 /**
- * Created by thChung on 3/2/2019.
+ * Created by thChung on 9/14/2019.
  */
-
 public class Exercise03 extends AppCompatActivity {
     public static final int STATE_LINK_ID = 200;
 

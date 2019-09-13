@@ -10,6 +10,9 @@ import android.widget.TextView;
 
 import com.tdt.lab03.R;
 
+/**
+ * Created by thChung on 9/14/2019.
+ */
 public class MainActivity extends AppCompatActivity {
     public static final String USER_NAME_INTENT = "USER_NAME";
     public static final String USER_EMAIL_INTENT = "USER_EMAIL";
