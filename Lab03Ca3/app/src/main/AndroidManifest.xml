@@ -13,12 +13,21 @@
     android:theme="@style/AppTheme">
     <activity
       android:label="@string/app_name"
-      android:name=".exercise03.Exercise03">
+      android:name=".exercise01.MainActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN"/>
         <category android:name="android.intent.category.LAUNCHER"/>
       </intent-filter>
     </activity>
+
+    <activity
+      android:name=".exercise01.WelcomeActivity"/>
+
+    <activity
+      android:name=".exercise02.Exercise02"/>
+
+    <activity
+      android:name=".exercise03.Exercise03"/>
 
     <activity
       android:label="@string/lab03_browser"
@@ -32,6 +41,7 @@
     </activity>
 
     <activity
-      android:name=".exercise01.WelcomeActivity"/>
+      android:name=".exercise04.Exercise04"/>
+    
   </application>
 </manifest>
