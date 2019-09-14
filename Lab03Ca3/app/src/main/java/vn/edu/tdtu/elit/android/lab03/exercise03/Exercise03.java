@@ -1,6 +1,7 @@
 package vn.edu.tdtu.elit.android.lab03.exercise03;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -34,11 +35,15 @@ public class Exercise03 extends AppCompatActivity {
         if (url.isEmpty()) {
           Toast.makeText(Exercise03.this, "URL cannot be empty!", Toast.LENGTH_LONG).show();
         } else {
-          Intent intent = new Intent(Exercise03.this, BrowserActivitiy.class);
-          intent.putExtra("URL", url);
-          startActivity(intent);
+          openBrowser(url);
         }
       }
     });
+  }
+
+  private void openBrowser(String url) {
+    Uri targetPage = Uri.parse(url);
+    Intent browserIntent = new Intent(Intent.ACTION_VIEW, targetPage);
+    startActivity(browserIntent);
   }
 }

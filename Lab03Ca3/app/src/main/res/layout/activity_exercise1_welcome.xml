@@ -18,7 +18,7 @@
         android:id="@+id/activity_exercise1_edt_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tvMessage"
+        android:layout_below="@+id/activity_exercise1_txt_message"
         android:textAlignment="center"
         android:layout_marginTop="80dp"
         android:layout_centerHorizontal="true"
@@ -32,6 +32,6 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
-        android:layout_below="@+id/edtName"
+        android:layout_below="@+id/activity_exercise1_edt_name"
         android:text="Lưu và thoát" />
 </RelativeLayout>
