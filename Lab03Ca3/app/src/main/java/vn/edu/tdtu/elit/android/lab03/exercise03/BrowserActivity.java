@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.webkit.WebView;
 
+import android.webkit.WebViewClient;
 import java.net.URL;
 import vn.edu.tdtu.elit.android.lab03.R;
 
@@ -35,6 +36,7 @@ public class BrowserActivity extends AppCompatActivity {
 
     WebView webView = (WebView) findViewById(R.id.webView1);
     webView.getSettings().setJavaScriptEnabled(true);
+    webView.setWebViewClient(new WebViewClient());
     webView.loadUrl(url.toString());
   }
 
