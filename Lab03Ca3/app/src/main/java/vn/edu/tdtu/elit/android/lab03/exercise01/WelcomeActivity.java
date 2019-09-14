@@ -20,12 +20,12 @@ public class WelcomeActivity extends AppCompatActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_welcome);
+    setContentView(R.layout.activity_exercise1_welcome);
 
     // lookup views
-    tvMessage = findViewById(R.id.tvMessage);
-    edtName = findViewById(R.id.edtName);
-    btnSaveAndQuit = findViewById(R.id.btnSaveAndQuit);
+    tvMessage = findViewById(R.id.activity_exercise1_txt_message);
+    edtName = findViewById(R.id.activity_exercise1_edt_name);
+    btnSaveAndQuit = findViewById(R.id.activity_exercise1_btn_save_and_quit);
 
     onActivityResult();
     // event handlers

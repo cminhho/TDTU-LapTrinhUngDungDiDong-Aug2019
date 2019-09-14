@@ -24,12 +24,12 @@ public class MainActivity extends AppCompatActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_main);
+    setContentView(R.layout.activity_exercise1_main);
 
     // lookup views
-    edtEmail = findViewById(R.id.edtEmail);
-    btnLogin = findViewById(R.id.btnLogin);
-    txtMessage = findViewById(R.id.txtMessage);
+    edtEmail = findViewById(R.id.activity_exercise1_edt_email);
+    btnLogin = findViewById(R.id.activity_exercise1_btn_login);
+    txtMessage = findViewById(R.id.activity_exercise1_txt_message);
 
     // event handlers
     btnLogin.setOnClickListener(new View.OnClickListener() {

@@ -19,11 +19,11 @@ public class Exercise02 extends AppCompatActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_exercise02);
+    setContentView(R.layout.activity_exercise2);
 
     // lookup views
-    edtLink = findViewById(R.id.edtLink);
-    btnOpenLink = findViewById(R.id.btnOpenLink);
+    edtLink = findViewById(R.id.activity_exercise1_edt_link);
+    btnOpenLink = findViewById(R.id.activity_exercise1_btn_open_link);
 
     // event handlers
     btnOpenLink.setOnClickListener(new View.OnClickListener() {
