@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String USER_EMAIL_INTENT = "USER_EMAIL";
     public static final int WELCOME_CODE = 0x9345;
 
-    private EditText edtUsername;
+    private EditText edtEmail;
     private Button btnLogin;
     private TextView txtMessage;
 
@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // lookup views
-        edtUsername = findViewById(R.id.edtUsername);
+        edtEmail = findViewById(R.id.edtEmail);
         btnLogin = findViewById(R.id.btnLogin);
         txtMessage = findViewById(R.id.txtMessage);
 
@@ -41,8 +41,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void openWelcomeActivity() {
         Intent intent = new Intent(this, WelcomeActivity.class);
-        String userName = edtUsername.getText().toString();
-        intent.putExtra(USER_NAME_INTENT, userName);
+        String userName = edtEmail.getText().toString();
+        intent.putExtra(USER_EMAIL_INTENT, userName);
         startActivityForResult(intent, WELCOME_CODE);
     }
 
@@ -50,8 +50,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if(requestCode == WELCOME_CODE) {
             if(resultCode == Activity.RESULT_OK){
-                String studentName = data.getStringExtra(USER_EMAIL_INTENT);
-                edtUsername.setText(studentName);
+                String studentName = data.getStringExtra(USER_NAME_INTENT);
+                edtEmail.setText(studentName);
                 txtMessage.setText("Hẹn gặp lại!");
                 btnLogin.setVisibility(View.GONE);
             }

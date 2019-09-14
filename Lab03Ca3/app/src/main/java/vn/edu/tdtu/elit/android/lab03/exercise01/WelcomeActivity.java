@@ -33,7 +33,7 @@ public class WelcomeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent();
                 String studentName = edtName.getText().toString();
-                intent.putExtra(MainActivity.USER_EMAIL_INTENT, studentName);
+                intent.putExtra(MainActivity.USER_NAME_INTENT, studentName);
                 setResult(Activity.RESULT_OK, intent);
                 finish();
             }
@@ -41,7 +41,7 @@ public class WelcomeActivity extends AppCompatActivity {
     }
 
     private void onActivityResult() {
-        String studentEmail = getIntent().getStringExtra(MainActivity.USER_NAME_INTENT);
+        String studentEmail = getIntent().getStringExtra(MainActivity.USER_EMAIL_INTENT);
         tvMessage.setText("Xin chào, " + studentEmail + ". Vui lòng nhập tên:");
     }
 }
