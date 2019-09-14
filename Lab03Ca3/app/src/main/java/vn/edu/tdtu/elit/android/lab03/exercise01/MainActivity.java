@@ -12,49 +12,48 @@ import android.widget.TextView;
 import vn.edu.tdtu.elit.android.lab03.R;
 
 public class MainActivity extends AppCompatActivity {
-    public static final String USER_NAME_INTENT = "USER_NAME";
-    public static final String USER_EMAIL_INTENT = "USER_EMAIL";
-    public static final int WELCOME_CODE = 0x9345;
 
-    private EditText edtEmail;
-    private Button btnLogin;
-    private TextView txtMessage;
+  public static final String USER_NAME_INTENT = "USER_NAME";
+  public static final String USER_EMAIL_INTENT = "USER_EMAIL";
+  public static final int WELCOME_CODE = 0x9345;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+  private EditText edtEmail;
+  private Button btnLogin;
+  private TextView txtMessage;
 
-        // lookup views
-        edtEmail = findViewById(R.id.edtEmail);
-        btnLogin = findViewById(R.id.btnLogin);
-        txtMessage = findViewById(R.id.txtMessage);
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
 
-        // event handlers
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openWelcomeActivity();
-            }
-        });
+    // lookup views
+    edtEmail = findViewById(R.id.edtEmail);
+    btnLogin = findViewById(R.id.btnLogin);
+    txtMessage = findViewById(R.id.txtMessage);
+
+    // event handlers
+    btnLogin.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        openWelcomeActivity();
+      }
+    });
+  }
+
+  private void openWelcomeActivity() {
+    Intent intent = new Intent(this, WelcomeActivity.class);
+    String userName = edtEmail.getText().toString();
+    intent.putExtra(USER_EMAIL_INTENT, userName);
+    startActivityForResult(intent, WELCOME_CODE);
+  }
+
+  @Override
+  protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    if (requestCode == WELCOME_CODE && resultCode == Activity.RESULT_OK) {
+      String studentName = data.getStringExtra(USER_NAME_INTENT);
+      edtEmail.setText(studentName);
+      txtMessage.setText("Hẹn gặp lại!");
+      btnLogin.setVisibility(View.GONE);
     }
-
-    private void openWelcomeActivity() {
-        Intent intent = new Intent(this, WelcomeActivity.class);
-        String userName = edtEmail.getText().toString();
-        intent.putExtra(USER_EMAIL_INTENT, userName);
-        startActivityForResult(intent, WELCOME_CODE);
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if(requestCode == WELCOME_CODE) {
-            if(resultCode == Activity.RESULT_OK){
-                String studentName = data.getStringExtra(USER_NAME_INTENT);
-                edtEmail.setText(studentName);
-                txtMessage.setText("Hẹn gặp lại!");
-                btnLogin.setVisibility(View.GONE);
-            }
-        }
-    }
+  }
 }

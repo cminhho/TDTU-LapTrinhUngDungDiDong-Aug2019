@@ -11,36 +11,37 @@ import android.widget.Toast;
 
 import vn.edu.tdtu.elit.android.lab03.R;
 
-public class Exercise02 extends AppCompatActivity{
-    private EditText edtLink;
-    private Button btnOpenLink;
+public class Exercise02 extends AppCompatActivity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_exercise02);
+  private EditText edtLink;
+  private Button btnOpenLink;
 
-        // lookup views
-        edtLink = findViewById(R.id.edtLink);
-        btnOpenLink = findViewById(R.id.btnOpenLink);
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_exercise02);
 
-        // event handlers
-        btnOpenLink.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String url = edtLink.getText().toString();
-                if(url.isEmpty()){
-                    Toast.makeText(Exercise02.this, "URL cannot be empty!", Toast.LENGTH_LONG).show();
-                } else {
-                    openBrowser(url);
-                }
-            }
-        });
-    }
+    // lookup views
+    edtLink = findViewById(R.id.edtLink);
+    btnOpenLink = findViewById(R.id.btnOpenLink);
 
-    private void openBrowser(String url) {
-        Uri targetPage = Uri.parse(url);
-        Intent browserIntent = new Intent(Intent.ACTION_VIEW, targetPage);
-        startActivity(browserIntent);
-    }
+    // event handlers
+    btnOpenLink.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        String url = edtLink.getText().toString();
+        if (url.isEmpty()) {
+          Toast.makeText(Exercise02.this, "URL cannot be empty!", Toast.LENGTH_LONG).show();
+        } else {
+          openBrowser(url);
+        }
+      }
+    });
+  }
+
+  private void openBrowser(String url) {
+    Uri targetPage = Uri.parse(url);
+    Intent browserIntent = new Intent(Intent.ACTION_VIEW, targetPage);
+    startActivity(browserIntent);
+  }
 }
