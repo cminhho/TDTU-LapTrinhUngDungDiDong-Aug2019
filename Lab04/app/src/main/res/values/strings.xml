@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">lab04</string>
+    <string name="login_form">Login Form</string>
+    <string name="password">Password</string>
+    <string name="user_name">User Name</string>
+    <string name="username">Username</string>
+    <string name="remember_password">Remember password</string>
+    <string name="login">login</string>
+    <string name="list_of_items">List of items</string>
+</resources>
