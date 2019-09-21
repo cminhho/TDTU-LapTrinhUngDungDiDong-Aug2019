@@ -8,8 +8,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/list_of_items"
-        tools:ignore="MissingConstraints" />
+        android:text="@string/list_of_items" />
 
     <ListView
         android:id="@+id/lvUsers"
