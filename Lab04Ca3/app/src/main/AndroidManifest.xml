@@ -9,12 +9,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".exercise3.Exercise3" >
+        <activity
+            android:name=".Exercise1"
+            android:label="Lab04 - Exercise 01">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".exercise2.Exercise2"
+            android:label="Lab04 - Exercise 02">
+        </activity>
+
+        <activity android:name=".exercise3.Exercise3"
+            android:label="Lab04 - Exercise 03">
         </activity>
     </application>
 

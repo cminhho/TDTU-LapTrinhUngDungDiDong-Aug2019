@@ -42,6 +42,6 @@
 
     <activity
       android:name=".exercise04.Exercise04"/>
-    
+
   </application>
 </manifest>
