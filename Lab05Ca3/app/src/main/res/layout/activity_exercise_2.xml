@@ -19,6 +19,8 @@
             android:background="@drawable/back"
             android:hint="@string/input_name_of_item"
             android:inputType="text"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
             android:padding="@dimen/small_activity_margin" />
 
         <Button

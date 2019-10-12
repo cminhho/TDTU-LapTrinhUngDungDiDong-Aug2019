@@ -44,6 +44,7 @@ public class Exercise1 extends AppCompatActivity {
     items = new ArrayList<>();
     for (int i = 1; i <= 10; i++) {
       items.add("item " + i);
+
     }
   }
 }
