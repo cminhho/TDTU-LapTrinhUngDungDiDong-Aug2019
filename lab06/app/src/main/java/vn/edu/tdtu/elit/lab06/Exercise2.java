@@ -61,9 +61,9 @@ public class Exercise2 extends AppCompatActivity {
       items.set(selected, updatedItem);
       itemsAdapter.notifyDataSetChanged();
     } else if (item.getItemId() == R.id.delete) {
+      Item updatedItem = items.get(selected);
       items.remove(selected);
       itemsAdapter.notifyDataSetChanged();
-      Item updatedItem = items.get(selected);
       Toast.makeText(this, updatedItem.getName() + " is deleted!", Toast.LENGTH_SHORT).show();
     }
     return super.onContextItemSelected(item);
