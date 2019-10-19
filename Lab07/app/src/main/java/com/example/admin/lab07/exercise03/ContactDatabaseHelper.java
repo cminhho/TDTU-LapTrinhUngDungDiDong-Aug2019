@@ -36,9 +36,10 @@ public class ContactDatabaseHelper extends SQLiteOpenHelper {
     Log.i(TAG, "ContactDatabaseHelper.onCreate ... ");
     // Create Contact tables.
     String script = "CREATE TABLE " + TABLE_CONTACT + "("
-        + COLUMN_CONTACT_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_CONTACT_NAME + " TEXT,"
-        + COLUMN_PHONE_NUMBER + " TEXT,"
-        + COLUMN_FAVORITE + " INTEGER DEFAULT 0)";
+            + COLUMN_CONTACT_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + COLUMN_CONTACT_NAME + " TEXT,"
+            + COLUMN_PHONE_NUMBER + " TEXT,"
+            + COLUMN_FAVORITE + " INTEGER DEFAULT 0)";
 
     // execute the script.
     db.execSQL(script);
@@ -99,7 +100,7 @@ public class ContactDatabaseHelper extends SQLiteOpenHelper {
     }
 
     Contact contact = new Contact();
-    contact.setContactId(Integer.parseInt(cursor.getString(0)));
+    contact.setId(Integer.parseInt(cursor.getString(0)));
     contact.setName(cursor.getString(1));
     contact.setPhoneNumber(cursor.getString(2));
     contact.setFavorite(Integer.parseInt(cursor.getString(3)));
@@ -122,7 +123,7 @@ public class ContactDatabaseHelper extends SQLiteOpenHelper {
     if (cursor.moveToFirst()) {
       do {
         Contact contact = new Contact();
-        contact.setContactId(cursor.getInt(0));
+        contact.setId(cursor.getInt(0));
         contact.setName(cursor.getString(1));
         contact.setPhoneNumber(cursor.getString(2));
         contact.setFavorite(cursor.getInt(3));
@@ -166,7 +167,7 @@ public class ContactDatabaseHelper extends SQLiteOpenHelper {
 
     // updating row
     return db.update(TABLE_CONTACT, values, COLUMN_CONTACT_ID + " = ?",
-        new String[]{String.valueOf(updateNote.getContactId())});
+        new String[]{String.valueOf(updateNote.getId())});
   }
 
   public void deleteContact(Contact contact) {
@@ -174,7 +175,7 @@ public class ContactDatabaseHelper extends SQLiteOpenHelper {
 
     SQLiteDatabase db = this.getWritableDatabase();
     db.delete(TABLE_CONTACT, COLUMN_CONTACT_ID + " = ?",
-        new String[]{String.valueOf(contact.getContactId())});
+        new String[]{String.valueOf(contact.getId())});
     db.close();
   }
 
