@@ -184,7 +184,7 @@ public class Exercise03 extends AppCompatActivity {
     adapter.notifyDataSetChanged();
   }
 
-  private void showUpdateDialog(final Contact contact, final int position) {
+  private void showUpdateDialog(final Contact selectedContact, final int position) {
     LayoutInflater layoutInflaterAndroid = LayoutInflater.from(getApplicationContext());
     View view = layoutInflaterAndroid.inflate(R.layout.contact_dialog, null);
 
@@ -196,8 +196,8 @@ public class Exercise03 extends AppCompatActivity {
     TextView dialogTitle = view.findViewById(R.id.dialog_title);
     dialogTitle.setText(getString(R.string.lbl_edit_contact_title));
 
-    edtContactName.setText(contact.getName());
-    edtPhoneNumber.setText(contact.getPhoneNumber());
+    edtContactName.setText(selectedContact.getName());
+    edtPhoneNumber.setText(selectedContact.getPhoneNumber());
 
     alertDialogBuilderUserInput
         .setCancelable(false)
@@ -205,15 +205,14 @@ public class Exercise03 extends AppCompatActivity {
           public void onClick(DialogInterface dialogBox, int id) {
             // Show toast message when no text is entered
             if (TextUtils.isEmpty(edtContactName.getText().toString())) {
-              Toast.makeText(Exercise03.this, "Enter note!", Toast.LENGTH_SHORT).show();
-              return;
+              Toast.makeText(Exercise03.this, "Name cannot be empty!", Toast.LENGTH_SHORT).show();
+            } else {
+              Contact contact = new Contact();
+              contact.setId(selectedContact.getId());
+              contact.setName(edtContactName.getText().toString());
+              contact.setPhoneNumber(edtPhoneNumber.getText().toString());
+              updateContact(contact, position);
             }
-            // check if user updating note
-            Contact contact = new Contact();
-            contact.setContactId(contact.getContactId());
-            contact.setName(edtContactName.getText().toString());
-            contact.setPhoneNumber(edtPhoneNumber.getText().toString());
-            updateContact(contact, position);
           }
         })
         .setNegativeButton("cancel",
