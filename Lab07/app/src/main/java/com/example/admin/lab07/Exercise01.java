@@ -11,8 +11,8 @@ import android.widget.Toast;
  */
 public class Exercise01 extends AppCompatActivity {
 
-  private static final String SHARED_APP_STARTUP_TIMES = "APP_STARTUP_TIMES";
-  private static final String PREFERENCE_NAME = "LAB07_APP_COUNTER";
+  private static final String SHARED_APP_STARTUP_TIMES = "APP_STARTUP_TIMES_2";
+  private static final String PREFERENCE_NAME = "LAB07_APP_COUNTER_2";
   private TextView txtOpenTimes;
   private int appStartupTimes = 0;
   private SharedPreferences sharedPreferences;
@@ -26,8 +26,8 @@ public class Exercise01 extends AppCompatActivity {
     txtOpenTimes = (TextView) findViewById(R.id.txtOpenTimes);
 
     sharedPreferences = getSharedPreferences(PREFERENCE_NAME, MODE_PRIVATE);
-    getPreferences();
-    storePreferences();
+    getStartupTimeNumber();
+    increaseStartupTimeNumber();
 
     displayValues();
   }
@@ -37,14 +37,14 @@ public class Exercise01 extends AppCompatActivity {
     Toast.makeText(this, "App startup times: " + appStartupTimes, Toast.LENGTH_LONG).show();
   }
 
-  private void storePreferences() {
+  private void increaseStartupTimeNumber() {
     SharedPreferences.Editor editor = sharedPreferences.edit();
     editor.putInt(SHARED_APP_STARTUP_TIMES, ++appStartupTimes);
     editor.apply();
     editor.commit();
   }
 
-  private void getPreferences() {
+  private void getStartupTimeNumber() {
     appStartupTimes = sharedPreferences.getInt(SHARED_APP_STARTUP_TIMES, 0);
   }
 
