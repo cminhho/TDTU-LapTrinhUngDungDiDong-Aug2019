@@ -93,12 +93,9 @@ public class Exercise3 extends AppCompatActivity {
     // display a message when a button was pressed
     String message = "";
     if (item.getItemId() == R.id.deleteAll) {
-      items.clear();
-      itemsAdapter.notifyDataSetChanged();
+      deleteItemsWithDialog();
     } else if (item.getItemId() == R.id.about) {
       showAboutDialog();
-    } else {
-      message = "Why would you select that!?";
     }
 
     // show message via toast
@@ -106,6 +103,23 @@ public class Exercise3 extends AppCompatActivity {
     toast.show();
 
     return true;
+  }
+
+  private void deleteItemsWithDialog() {
+    AlertDialog.Builder builder = new AlertDialog.Builder(this);
+    builder.setTitle("Delete Items");
+    builder.setMessage("Are you sure to delete all items");
+    builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+      @Override
+      public void onClick(DialogInterface dialog, int which) {
+        items.clear();
+        itemsAdapter.notifyDataSetChanged();
+      }
+    });
+
+    builder.setNegativeButton("Cancel", null);
+    AlertDialog alertDialog = builder.create();
+    alertDialog.show();
   }
 
   private void showAboutDialog() {
