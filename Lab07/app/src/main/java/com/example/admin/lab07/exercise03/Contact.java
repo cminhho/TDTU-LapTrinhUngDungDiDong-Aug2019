@@ -5,7 +5,7 @@ package com.example.admin.lab07.exercise03;
  */
 public class Contact {
 
-  private int contactId;
+  private int id;
   private String name;
   private String phoneNumber;
   private String imgAddress;
@@ -32,18 +32,18 @@ public class Contact {
     this.favorite = favorite;
   }
 
-  public Contact(int contactId, String name, String phoneNumber) {
-    this.contactId = contactId;
+  public Contact(int id, String name, String phoneNumber) {
+    this.id = id;
     this.name = name;
     this.phoneNumber = phoneNumber;
   }
 
-  public int getContactId() {
-    return contactId;
+  public int getId() {
+    return id;
   }
 
-  public void setContactId(int contactId) {
-    this.contactId = contactId;
+  public void setId(int id) {
+    this.id = id;
   }
 
   public String getName() {
@@ -89,7 +89,7 @@ public class Contact {
 
     Contact contact = (Contact) o;
 
-    if (contactId != contact.contactId) {
+    if (id != contact.id) {
       return false;
     }
     if (favorite != contact.favorite) {
@@ -99,7 +99,7 @@ public class Contact {
       return false;
     }
     if (phoneNumber != null ? !phoneNumber.equals(contact.phoneNumber)
-        : contact.phoneNumber != null) {
+            : contact.phoneNumber != null) {
       return false;
     }
     return imgAddress != null ? imgAddress.equals(contact.imgAddress) : contact.imgAddress == null;
@@ -107,7 +107,7 @@ public class Contact {
 
   @Override
   public int hashCode() {
-    int result = contactId;
+    int result = (int) (id ^ (id >>> 32));
     result = 31 * result + (name != null ? name.hashCode() : 0);
     result = 31 * result + (phoneNumber != null ? phoneNumber.hashCode() : 0);
     result = 31 * result + (imgAddress != null ? imgAddress.hashCode() : 0);
@@ -118,11 +118,11 @@ public class Contact {
   @Override
   public String toString() {
     return "Contact{" +
-        "contactId=" + contactId +
-        ", name='" + name + '\'' +
-        ", phoneNumber='" + phoneNumber + '\'' +
-        ", imgAddress='" + imgAddress + '\'' +
-        ", favorite=" + favorite +
-        '}';
+            "contactId=" + id +
+            ", name='" + name + '\'' +
+            ", phoneNumber='" + phoneNumber + '\'' +
+            ", imgAddress='" + imgAddress + '\'' +
+            ", favorite=" + favorite +
+            '}';
   }
 }
