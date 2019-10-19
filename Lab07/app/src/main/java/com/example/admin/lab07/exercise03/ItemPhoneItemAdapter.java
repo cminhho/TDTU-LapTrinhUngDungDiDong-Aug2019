@@ -22,63 +22,64 @@ import java.util.List;
  */
 
 public class ItemPhoneItemAdapter extends ArrayAdapter<Contact> {
-    private Context context;
-    private TextView txtItemName;
-    private List<Contact> items;
-    private ImageView imvImage;
-    private TextView txtPhoneNumber;
-    private ImageView imvFavorite;
-    private ContactDatabaseHelper contactDatabaseHelper;
 
-    public ItemPhoneItemAdapter(@NonNull Context context, @NonNull List<Contact> objects) {
-        super(context, R.layout.contact_item_row, objects);
-        this.context = context;
-        this.items = objects;
-    }
+  private Context context;
+  private TextView txtItemName;
+  private List<Contact> items;
+  private ImageView imvImage;
+  private TextView txtPhoneNumber;
+  private ImageView imvFavorite;
+  private ContactDatabaseHelper contactDatabaseHelper;
 
-    @NonNull
-    @Override
-    public View getView(final int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        LayoutInflater layoutInflater = ((Activity)context).getLayoutInflater();
-        convertView = layoutInflater.inflate(R.layout.contact_item_row, null);
+  public ItemPhoneItemAdapter(@NonNull Context context, @NonNull List<Contact> objects) {
+    super(context, R.layout.contact_item_row, objects);
+    this.context = context;
+    this.items = objects;
+  }
 
-        contactDatabaseHelper = new ContactDatabaseHelper(context);
+  @NonNull
+  @Override
+  public View getView(final int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+    LayoutInflater layoutInflater = ((Activity) context).getLayoutInflater();
+    convertView = layoutInflater.inflate(R.layout.contact_item_row, null);
 
-        // init view
-        txtItemName = (TextView) convertView.findViewById(R.id.txtItemName);
-        txtPhoneNumber = (TextView) convertView.findViewById(R.id.txtPhoneNumber);
-        imvImage = (ImageView) convertView.findViewById(R.id.imvImage);
-        imvFavorite = (ImageView) convertView.findViewById(R.id.imvFavorite);
+    contactDatabaseHelper = new ContactDatabaseHelper(context);
 
-        // get current value
-        final Contact currentValue = items.get(position);
+    // init view
+    txtItemName = (TextView) convertView.findViewById(R.id.txtItemName);
+    txtPhoneNumber = (TextView) convertView.findViewById(R.id.txtPhoneNumber);
+    imvImage = (ImageView) convertView.findViewById(R.id.imvImage);
+    imvFavorite = (ImageView) convertView.findViewById(R.id.imvFavorite);
 
-        // bind data to view
-        txtItemName.setText(currentValue.getName());
-        txtPhoneNumber.setText(currentValue.getPhoneNumber());
-        imvImage.setImageResource(R.drawable.boy);
-        int favorite = currentValue.getFavorite();
+    // get current value
+    final Contact currentValue = items.get(position);
+
+    // bind data to view
+    txtItemName.setText(currentValue.getName());
+    txtPhoneNumber.setText(currentValue.getPhoneNumber());
+    imvImage.setImageResource(R.drawable.boy);
+    int favorite = currentValue.getFavorite();
+    setFavoriteImageResource(favorite);
+
+    imvFavorite.setOnClickListener(new View.OnClickListener() {
+      public void onClick(View v) {
+        int favorite = currentValue.getFavorite() == 0 ? 1 : 0;
+        currentValue.setFavorite(favorite);
         setFavoriteImageResource(favorite);
+        contactDatabaseHelper.updateContact(currentValue);
+        notifyDataSetChanged();
+      }
+    });
 
-        imvFavorite.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                int favorite = currentValue.getFavorite() == 0 ? 1 : 0;
-                currentValue.setFavorite(favorite);
-                setFavoriteImageResource(favorite);
-                contactDatabaseHelper.updateContact(currentValue);
-                notifyDataSetChanged();
-            }
-        });
+    convertView.setLongClickable(true);
+    return convertView;
+  }
 
-        convertView.setLongClickable(true);
-        return convertView;
+  private void setFavoriteImageResource(int favorite) {
+    if (favorite == 1) {
+      imvFavorite.setImageResource(R.drawable.star);
+    } else {
+      imvFavorite.setImageResource(R.drawable.unstar);
     }
-
-    private void setFavoriteImageResource(int favorite) {
-        if(favorite == 1){
-            imvFavorite.setImageResource(R.drawable.star);
-        } else {
-            imvFavorite.setImageResource(R.drawable.unstar);
-        }
-    }
+  }
 }
