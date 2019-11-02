@@ -59,17 +59,17 @@ public class Lab01 extends AppCompatActivity {
   }
 
   private void initView() {
-    txtWifiStatus = (TextView) findViewById(R.id.txtWifiStatus);
-    btnOpenWifi = (Button) findViewById(R.id.btnOpenWifi);
+    txtWifiStatus = findViewById(R.id.txtWifiStatus);
+    btnOpenWifi = findViewById(R.id.btnOpenWifi);
   }
 
   private void checkWifiConnection() {
     ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
     NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
     boolean isConnected = activeNetwork != null && activeNetwork.isConnectedOrConnecting();
-    boolean isWiFi = activeNetwork.getType() == ConnectivityManager.TYPE_WIFI;
+    boolean isWiFiType = activeNetwork.getType() == ConnectivityManager.TYPE_WIFI;
 
-    if (isWiFi) {
+    if (isWiFiType) {
       txtWifiStatus.setText("Wifi is connected");
     } else {
       txtWifiStatus.setText("The application need wifi connection to play!");

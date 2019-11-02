@@ -2,8 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
   package="com.example.admin.vn">
 
-  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+  <uses-permission android:name="android.permission.INTERNET" />
   <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+  <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
 
   <application
     android:allowBackup="true"
@@ -12,12 +14,24 @@
     android:roundIcon="@mipmap/ic_launcher_round"
     android:supportsRtl="true"
     android:theme="@style/AppTheme">
-    <activity android:name=".Lab02BroadcastActivity">
+    <activity
+      android:label="Exercise 01"
+      android:name=".Lab01">
       <intent-filter>
         <action android:name="android.intent.action.MAIN"/>
 
         <category android:name="android.intent.category.LAUNCHER"/>
       </intent-filter>
+    </activity>
+
+    <activity
+      android:label="Exercise 02"
+      android:name=".Lab02BroadcastActivity">
+      <!--<intent-filter>-->
+      <!--<action android:name="android.intent.action.MAIN"/>-->
+
+      <!--<category android:name="android.intent.category.LAUNCHER"/>-->
+      <!--</intent-filter>-->
     </activity>
 
     <receiver
