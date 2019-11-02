@@ -55,7 +55,7 @@ public class Lab01 extends AppCompatActivity {
   }
 
   private void gotoWifiSetting() {
-    startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS));
+    startActivity(new Intent(WifiManager.ACTION_PICK_WIFI_NETWORK));
   }
 
   private void initView() {

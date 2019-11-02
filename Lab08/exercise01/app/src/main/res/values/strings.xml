@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Lab08 - Exercise01</string>
     <string name="open_wifi">Mở WIFI</string>
     <string name="wifi_status">Wifi Status</string>
     <string name="send_notification">Send Notification</string>
