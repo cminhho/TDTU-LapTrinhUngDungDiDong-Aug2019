@@ -8,15 +8,20 @@ import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class Receiver extends AppCompatActivity {
 
     private static final String TAG = Receiver.class.getName();
+    private TextView welcomeText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_receiver);
+
+        welcomeText = findViewById(R.id.welcomeText);
         setContentView(R.layout.activity_receiver);
     }
 
@@ -51,6 +56,8 @@ public class Receiver extends AppCompatActivity {
             Log.d(TAG, "Receiver: Anonymous class broadcast receiver");
 
             Toast.makeText(context, "Receiver: Received the Intent's message: " + intentData, Toast.LENGTH_LONG).show();
+
+            welcomeText.setText("Receiver: Received the Intent's message: " + intentData);
 
             NotificationCompat.Builder builder = new NotificationCompat.Builder(Receiver.this, CHANNEL_ID)
                     .setContentTitle("Hello")

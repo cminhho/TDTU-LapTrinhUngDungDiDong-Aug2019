@@ -13,9 +13,6 @@ import android.widget.EditText;
 
 import com.example.admin.vn.R;
 
-/**
- * Created by thChung on 3/30/2019.
- */
 
 public class Sender extends Activity implements OnClickListener {
 
@@ -29,8 +26,8 @@ public class Sender extends Activity implements OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.lab02);
 
-        etReceivedBroadcast = (EditText) findViewById(R.id.etReceivedBroadcast);
-        btnSendBroadcast = (Button) findViewById(R.id.btnSendBroadcast);
+        etReceivedBroadcast = findViewById(R.id.etReceivedBroadcast);
+        btnSendBroadcast = findViewById(R.id.btnSendBroadcast);
 
         btnSendBroadcast.setOnClickListener(this);
 
