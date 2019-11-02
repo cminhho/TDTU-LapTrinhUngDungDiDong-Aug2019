@@ -23,7 +23,7 @@ public class Lab01 extends AppCompatActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.lab01);
+    setContentView(R.layout.activity_lab01);
 
     initView();
     handleEvents();
