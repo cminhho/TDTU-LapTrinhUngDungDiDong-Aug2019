@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  package="com.example.admin.lab09">
+
+  <uses-permission android:name="android.permission.INTERNET"/>
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+  <application
+    android:allowBackup="true"
+    android:icon="@mipmap/ic_launcher"
+    android:label="@string/app_name"
+    android:roundIcon="@mipmap/ic_launcher_round"
+    android:supportsRtl="true"
+    android:theme="@style/AppTheme">
+    <activity
+      android:label="Exercise 1"
+      android:name=".exercise01.Exercise01">
+    </activity>
+    <activity
+      android:label="Exercise 2"
+      android:name=".exercise02.Exercise02">
+    </activity>
+    <activity
+      android:label="Exercise 3"
+      android:name=".exercise03.Exercise03">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN"/>
+
+        <category android:name="android.intent.category.LAUNCHER"/>
+      </intent-filter>
+    </activity>
+
+    <service
+      android:enabled="true"
+      android:exported="true"
+      android:name=".exercise02.Exercise2Service">
+    </service>
+
+    <service
+      android:enabled="true"
+      android:exported="true"
+      android:name=".exercise03.Exercise3IntentService">
+    </service>
+
+  </application>
+
+</manifest>
