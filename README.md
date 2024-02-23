@@ -8,5 +8,4 @@ Providing Android exercises for reference purposes.
 
 ## Contact:
 - Name: Ho Minh Chung
-- Email: hmchung92@gmail.com - hmchung@tma.com.vn
-- Phone: 0906 246 489
+- Email: hmchung92@gmail.com
